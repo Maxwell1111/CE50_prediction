@@ -1,6 +1,8 @@
 # CE50 Prediction System - Complete Implementation
 
-A state-of-the-art machine learning system for predicting CE50 (half-maximal effective concentration) values from molecular SMILES strings using dual fingerprints and ensemble learning.
+A state-of-the-art machine learning system for predicting CE50 (Collision Energy for 50% fragmentation in mass spectrometry) from molecular SMILES strings using dual fingerprints and ensemble learning.
+
+**CE50** is a mass spectrometry property that measures the collision energy required to fragment 50% of parent ions in tandem mass spectrometry (MS/MS). It reflects molecular stability, bond strengths, and gas-phase fragmentation patterns.
 
 ## 🎯 Project Overview
 
@@ -83,7 +85,7 @@ predictions = ensemble.predict_with_confidence(['CCO', 'c1ccccc1', 'CC(=O)O'])
 # Access results
 for pred in predictions:
     print(f"SMILES: {pred['smiles']}")
-    print(f"Predicted CE50: {pred['predicted_ce50']:.2f} μM")
+    print(f"Predicted CE50: {pred['predicted_ce50']:.2f} eV")  # Collision energy in electronvolts
     print(f"Confidence: {pred['confidence']}")
 ```
 
@@ -242,6 +244,8 @@ smiles,predicted_ce50,predicted_pce50,confidence,selected_model,ensemble_std,tan
 CCO,20.42,-1.31,High,rf_binary,0.017,1.0,1.0
 c1ccccc1,18.5,-1.27,Medium,rf_binary,0.045,0.52,0.39
 ```
+
+**Note:** CE50 values are in electronvolts (eV). pCE50 is -log10(CE50) for normalized modeling.
 
 ### JSON Metadata (models/metadata_*.json)
 ```json

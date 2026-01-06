@@ -1,13 +1,19 @@
 """
 CE50 Ensemble Prediction System with Dual Fingerprints
 
-This advanced system implements:
+CE50 = Collision Energy required to fragment 50% of parent ions in mass spectrometry
+
+This advanced system predicts CE50 (collision energy for 50% fragmentation) from molecular structure:
 - Dual fingerprint types (Binary + Count Morgan)
 - 4-model ensemble (RF/XGB × Binary/Count)
 - Applicability domain assessment (4 methods)
 - Dynamic model selection based on confidence
 - Comprehensive visualization suite
 - Model persistence and versioning
+
+CE50 is a mass spectrometry property measuring the collision energy needed to fragment
+50% of precursor ions. It depends on molecular structure, bond strengths, and gas-phase
+stability. This is predictable from molecular fingerprints (R² ~0.57).
 
 Author: Senior Bioinformatician
 Date: 2026-01-05

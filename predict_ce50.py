@@ -1,7 +1,12 @@
 """
 CE50 Prediction from SMILES Strings using Machine Learning
 
-This script builds regression models to predict CE50 values from molecular SMILES strings.
+CE50 = Collision Energy required to fragment 50% of parent ions in mass spectrometry
+
+This script builds regression models to predict CE50 (collision energy for 50% fragmentation)
+from molecular SMILES strings. CE50 is a mass spectrometry property that depends on molecular
+structure, bond strengths, and gas-phase stability.
+
 It uses Morgan Fingerprints for molecular featurization and compares Random Forest and XGBoost regressors.
 
 Author: Senior Bioinformatician
