@@ -6,13 +6,44 @@ A state-of-the-art machine learning system for predicting CE50 (Collision Energy
 
 ## 🎯 Project Overview
 
-This repository contains a complete, production-ready implementation of a cheminformatics prediction system with advanced features including:
+### Research Hypothesis
+
+**Can machine learning-predicted CE50 values predict rat pharmacokinetic parameters?**
+
+This repository investigates whether ML-predicted CE50 (collision energy for 50% fragmentation in mass spectrometry) can correlate with rat oral exposure (AUC/Dose), based on the original 2016 discovery that **experimentally measured CE50 correlates with rat PK outcomes**.
+
+**Original Discovery (2016):** Experimentally measured CE50 shows predictive power in classifying compounds as having favorable or poor PK parameters in rat PK studies.
+
+**Current Investigation (2026):** Testing whether ML models can predict CE50 from molecular structure and whether these predictions maintain the PK correlation, enabled by recent advancements in machine learning and AI tools.
+
+### System Features
+
+This repository contains a complete, production-ready implementation of a cheminformatics prediction system:
 
 - **Dual Fingerprint Ensemble** (4 models)
+- **CE50 Prediction from SMILES** (R² = 0.57)
 - **Multi-method Applicability Domain Assessment**
 - **Dynamic Per-Molecule Model Selection**
 - **Comprehensive Confidence Quantification**
 - **Full Model Versioning & Persistence**
+- **Correlation Analysis with Rat PK Data**
+
+### Discovery Timeline
+
+**2016: Original Discovery**
+- Experimentally measured CE50 correlates with rat pharmacokinetic parameters
+- CE50 predicts IV plasma clearance and oral exposure (AUC)
+- Classification of compounds as favorable vs poor PK based on CE50 cutoffs
+- Methodology documented in CE50.pdf
+
+**2026: Machine Learning Extension**
+- ML ensemble achieves R² = 0.57 for CE50 prediction from SMILES
+- Tested correlation between ML-predicted CE50 and rat oral exposure (77 compounds)
+- Result: No significant correlation (r = -0.10, p = 0.38) in this dataset
+- Conclusion: Experimental CE50 measurement still recommended for PK prediction
+- Driven by advancements in ML and new AI tools
+
+**See `INVENTION_DOCUMENTATION.md` for complete patent/IP documentation**
 
 ## 📁 Repository Contents
 
@@ -24,12 +55,20 @@ This repository contains a complete, production-ready implementation of a chemin
 ### Documentation
 - **`TECHNICAL_SPECIFICATION.md`** - Complete 67-page technical specification
 - **`ENSEMBLE_IMPLEMENTATION_SUMMARY.md`** - Implementation summary with results
+- **`INVENTION_DOCUMENTATION.md`** - **NEW** Patent/IP documentation of CE50-PK correlation discovery (2016) and ML extension (2026)
+- **`CE50_DEFINITION.md`** - Comprehensive explanation of CE50 as mass spectrometry property
+- **`CE50_AUC_DOSE_CORRELATION_SUMMARY.md`** - Analysis of ML-predicted CE50 vs rat oral exposure
+- **`AUC_DOSE_TEST_SUMMARY.md`** - Full AUC/Dose prediction results
+- **`CE50.pdf`** - Original CE50 measurement method reference
 - **`README.md`** - This file
 
 ### Data Files
 - **`kinase_compounds.csv`** - Test dataset (11 kinase inhibitors)
 - **`ce50_compounds.csv`** - Training dataset
+- **`ce50_300compounds_training.csv`** - 300 compounds for production validation
+- **`CDD Excel Export -AUC-dose.xlsx`** - 77 compounds with rat oral exposure data
 - **`ensemble_predictions.csv`** - Output predictions with confidence scores
+- **`ce50_predictions_for_auc_dose_corrected.csv`** - ML-predicted CE50 vs rat PK analysis
 
 ### Model Artifacts
 ```

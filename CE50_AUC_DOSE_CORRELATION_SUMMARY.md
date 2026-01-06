@@ -1,20 +1,30 @@
 # CE50 vs AUC/Dose Correlation Analysis - Final Report
 
 **Date:** 2026-01-05
-**Dataset:** CDD Excel Export -AUC-dose (77 compounds)
+**Dataset:** CDD Excel Export -AUC-dose (77 compounds with rat oral exposure data)
 **Model:** CE50 Ensemble (trained on 300 compounds, R² = 0.57)
-**Analysis:** Correlation between predicted cellular potency (CE50) and pharmacokinetic exposure (AUC/Dose)
+**Analysis:** Can ML-predicted CE50 predict rat pharmacokinetic outcomes?
+
+## Research Context
+
+**Original Discovery (2016):** Experimentally measured CE50 (collision energy for 50% fragmentation in mass spectrometry) correlates with rat pharmacokinetic parameters, including IV plasma clearance and oral exposure (AUC).
+
+**Current Hypothesis:** If ML models can accurately predict CE50 from molecular structure, then ML-predicted CE50 should also correlate with rat PK, enabling in silico PK screening without experimental measurements.
+
+**This Analysis:** Tests correlation between **ML-predicted CE50** and **rat oral exposure (AUC/Dose)** measured in vivo.
 
 ---
 
 ## Executive Summary
 
-**Main Finding:** ❌ **No significant correlation exists between predicted CE50 and actual AUC/Dose**
+**Main Finding:** ❌ **No significant correlation between ML-predicted CE50 and rat oral exposure (AUC/Dose)**
 
 - **Pearson correlation:** r = -0.10, p = 0.38 (not significant)
 - **Spearman correlation:** ρ = -0.07, p = 0.53 (not significant)
 
-**Interpretation:** Cellular potency (how well a drug binds to its target) and pharmacokinetic exposure (how much drug reaches the body) are **independent properties** controlled by different molecular features.
+**Interpretation:** While experimentally measured CE50 has been shown to correlate with rat PK (original 2016 discovery), ML-predicted CE50 in this analysis does not show the same correlation. This suggests that **experimental CE50 measurement is still required** for reliable PK prediction, at least with current ML model accuracy (R² = 0.57) and this dataset.
+
+**Hypothesis Status:** ❌ Not validated in this test. ML-predicted CE50 cannot currently replace experimental CE50 for rat PK prediction.
 
 ---
 
