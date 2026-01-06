@@ -42,7 +42,7 @@
 
 ### Dataset Characteristics
 
-**Predicted CE50 (Cellular Potency):**
+**Predicted CE50 (Mass Spec Fragmentation):**
 - Range: 16.31 - 24.01 μM
 - Mean: 19.77 ± 1.52 μM
 - Median: 19.57 μM
@@ -65,39 +65,39 @@
 
 ## Top Compounds Analysis
 
-### 10 Most Potent Compounds (Lowest CE50)
+### 10 Lowest CE50 Compounds (Easiest Fragmentation)
 
-| Rank | Molecule | Predicted CE50 (μM) | Actual AUC/Dose | Observation |
+| Rank | Molecule | Predicted CE50 (eV) | Actual AUC/Dose | Observation |
 |------|----------|---------------------|-----------------|-------------|
-| 1 | GEN-0040509 | 16.31 | 3,040 | High potency, moderate PK |
-| 2 | GEN-0031048 | 17.08 | 12,200 | High potency, **excellent PK** ✓ |
-| 3 | GEN-0061818 | 17.10 | 14,400 | High potency, **excellent PK** ✓ |
-| 4 | GEN-0031966 | 17.21 | 756 | High potency, moderate PK |
-| 5 | GEN-0066500 | 17.22 | 2,440 | High potency, moderate PK |
-| 6 | GEN-0068004 | 17.31 | 224 | High potency, **poor PK** ⚠️ |
-| 7 | GEN-0042280 | 17.75 | 99 | High potency, **poor PK** ⚠️ |
-| 8 | GEN-0041396 | 17.78 | 11,840 | High potency, **excellent PK** ✓ |
-| 9 | GEN-0016770 | 17.79 | 4,633 | High potency, good PK |
-| 10 | GEN-0065670 | 17.79 | 51 | High potency, **poor PK** ⚠️ |
+| 1 | GEN-0040509 | 16.31 | 3,040 | Low CE50, moderate PK |
+| 2 | GEN-0031048 | 17.08 | 12,200 | Low CE50, **excellent PK** ✓ |
+| 3 | GEN-0061818 | 17.10 | 14,400 | Low CE50, **excellent PK** ✓ |
+| 4 | GEN-0031966 | 17.21 | 756 | Low CE50, moderate PK |
+| 5 | GEN-0066500 | 17.22 | 2,440 | Low CE50, moderate PK |
+| 6 | GEN-0068004 | 17.31 | 224 | Low CE50, **poor PK** ⚠️ |
+| 7 | GEN-0042280 | 17.75 | 99 | Low CE50, **poor PK** ⚠️ |
+| 8 | GEN-0041396 | 17.78 | 11,840 | Low CE50, **excellent PK** ✓ |
+| 9 | GEN-0016770 | 17.79 | 4,633 | Low CE50, good PK |
+| 10 | GEN-0065670 | 17.79 | 51 | Low CE50, **poor PK** ⚠️ |
 
-**Key Insight:** The most potent compounds show **280-fold range in AUC/Dose** (51 to 14,400), demonstrating that potency does NOT predict pharmacokinetics.
+**Key Insight:** The compounds with lowest CE50 (easiest fragmentation) show **280-fold range in AUC/Dose** (51 to 14,400), demonstrating that CE50 does NOT predict pharmacokinetics in this ML-predicted dataset.
 
-### 10 Least Potent Compounds (Highest CE50)
+### 10 Highest CE50 Compounds (Hardest Fragmentation)
 
-| Rank | Molecule | Predicted CE50 (μM) | Actual AUC/Dose | Observation |
+| Rank | Molecule | Predicted CE50 (eV) | Actual AUC/Dose | Observation |
 |------|----------|---------------------|-----------------|-------------|
-| 1 | GEN-0014620 | 24.01 | 236 | Low potency, poor PK |
-| 2 | GEN-0067874 | 23.26 | 830 | Low potency, moderate PK |
-| 3 | GEN-0065396 | 22.57 | 910 | Low potency, moderate PK |
-| 4 | GEN-0064389 | 22.53 | 316 | Low potency, poor PK |
-| 5 | GEN-0065625 | 22.46 | 232 | Low potency, poor PK |
-| 6 | GEN-0064406 | 22.27 | 310 | Low potency, poor PK |
-| 7 | GEN-0065349 | 22.03 | 716 | Low potency, moderate PK |
-| 8 | GEN-0062666 | 21.93 | 12 | Low potency, **very poor PK** ⚠️⚠️ |
-| 9 | GEN-0063936 | 21.81 | 216 | Low potency, poor PK |
-| 10 | GEN-0064093 | 21.47 | 910 | Low potency, moderate PK |
+| 1 | GEN-0014620 | 24.01 | 236 | High CE50, poor PK |
+| 2 | GEN-0067874 | 23.26 | 830 | High CE50, moderate PK |
+| 3 | GEN-0065396 | 22.57 | 910 | High CE50, moderate PK |
+| 4 | GEN-0064389 | 22.53 | 316 | High CE50, poor PK |
+| 5 | GEN-0065625 | 22.46 | 232 | High CE50, poor PK |
+| 6 | GEN-0064406 | 22.27 | 310 | High CE50, poor PK |
+| 7 | GEN-0065349 | 22.03 | 716 | High CE50, moderate PK |
+| 8 | GEN-0062666 | 21.93 | 12 | High CE50, **very poor PK** ⚠️⚠️ |
+| 9 | GEN-0063936 | 21.81 | 216 | High CE50, poor PK |
+| 10 | GEN-0064093 | 21.47 | 910 | High CE50, moderate PK |
 
-**Key Insight:** The least potent compounds also show **78-fold range in AUC/Dose** (12 to 910), with no clear pattern.
+**Key Insight:** The compounds with highest CE50 (hardest fragmentation) also show **78-fold range in AUC/Dose** (12 to 910), with no clear pattern.
 
 ---
 
@@ -107,31 +107,31 @@
 
 | Property | Molecular Determinants | Structural Features |
 |----------|------------------------|---------------------|
-| **CE50 (Potency)** | Target binding affinity, cellular permeability | Pharmacophore, H-bonds, shape complementarity, lipophilicity for cell entry |
+| **CE50 (Mass Spec)** | Gas-phase fragmentation energy, molecular bond strengths | Bond dissociation energies, molecular stability, functional group lability |
 | **AUC/Dose (PK)** | Absorption, Distribution, Metabolism, Excretion | LogP, PSA, molecular weight, metabolic stability, CYP liability, protein binding, clearance |
 
 ### The Drug Discovery Challenge
 
 If CE50 and AUC/Dose were correlated, drug discovery would be easy! The **lack of correlation** reflects the core challenge:
 
-> **"Making a potent compound is hard. Making a potent compound with good ADME is even harder."**
+> **"Making a stable compound is hard. Making a stable compound with good ADME is even harder."**
 
 ### Real-World Examples from This Dataset
 
-**Example 1: High Potency + Excellent PK** ✅
-- **GEN-0061818:** CE50 = 17.1 μM, AUC/Dose = 14,400
-- **Best case scenario** - potent and good exposure
+**Example 1: Low CE50 + Excellent PK** ✅
+- **GEN-0061818:** CE50 = 17.1 eV, AUC/Dose = 14,400
+- **Best case scenario** - favorable CE50 (indicating metabolic stability) and good exposure
 
-**Example 2: High Potency + Poor PK** ⚠️
-- **GEN-0065670:** CE50 = 17.8 μM, AUC/Dose = 51
-- **Common problem** - binds target well but rapidly cleared or poorly absorbed
+**Example 2: Low CE50 + Poor PK** ⚠️
+- **GEN-0065670:** CE50 = 17.8 eV, AUC/Dose = 51
+- **Common problem** - fragments easily in MS but rapidly cleared or poorly absorbed
 
-**Example 3: Similar Potency, 280-Fold PK Difference**
-- **GEN-0042280:** CE50 = 17.8 μM, AUC/Dose = 99
-- **GEN-0061818:** CE50 = 17.1 μM, AUC/Dose = 14,400
-- **Nearly identical potency, vastly different PK!**
+**Example 3: Similar CE50, 280-Fold PK Difference**
+- **GEN-0042280:** CE50 = 17.8 eV, AUC/Dose = 99
+- **GEN-0061818:** CE50 = 17.1 eV, AUC/Dose = 14,400
+- **Nearly identical CE50, vastly different PK!**
 
-These examples demonstrate that potency and PK are **orthogonal properties**.
+These examples demonstrate that CE50 (mass spec fragmentation) and rat PK (in vivo exposure) are **independent properties**.
 
 ---
 
@@ -167,10 +167,10 @@ Using Cohen's guidelines for correlation coefficients:
 
 ### 1. Narrow CE50 Range (Only 1.5-fold)
 
-The predicted CE50 values span just 16.3 - 24.0 μM, which may indicate:
+The predicted CE50 values span just 16.3 - 24.0 eV, which may indicate:
 
 **Possible Explanations:**
-- All molecules share similar structural scaffolds (same target binding motif)
+- All molecules share similar structural scaffolds (similar fragmentation patterns)
 - Molecules are outside the applicability domain of the CE50 model
 - Model predictions are compressed for this chemical space
 - Dataset represents a focused compound library with similar potency
@@ -197,7 +197,7 @@ The predicted CE50 values span just 16.3 - 24.0 μM, which may indicate:
 ### 4. Different Experimental Conditions
 
 **CE50 measurement:**
-- In vitro cellular assay
+- Mass spectrometry (MS/MS)
 - Controlled conditions
 - Single target
 
@@ -216,34 +216,34 @@ These different experimental contexts contribute to the lack of correlation.
 
 ### What Does This Mean?
 
-The **lack of correlation** is actually **biologically expected and important**:
+The **lack of correlation in ML-predicted CE50** is important to understand:
 
-1. **CE50 measures target engagement** - Can the molecule bind to and inhibit the target?
+1. **CE50 measures gas-phase fragmentation** - How easily does the molecule break apart in mass spectrometry?
 
-2. **AUC/Dose measures systemic exposure** - Does the molecule reach the target tissue at therapeutic levels?
+2. **AUC/Dose measures in vivo exposure** - How much drug reaches the bloodstream after oral dosing?
 
-3. **Both are necessary but independent:**
-   - High potency (low CE50) without good PK → **No efficacy** (drug doesn't reach target)
-   - Good PK without potency → **No efficacy** (drug reaches target but doesn't work)
-   - **Need BOTH for a successful drug!**
+3. **Original 2016 Discovery vs This Analysis:**
+   - **Experimental CE50** (measured by MS/MS) → **DID correlate** with rat PK
+   - **ML-predicted CE50** (from SMILES) → **NO correlation** found in this dataset
+   - Possible reasons: ML prediction errors, narrow predicted range, domain shift
+   - **Conclusion:** Experimental CE50 measurement still required for PK prediction
 
-### The "Drug-Like" Property Space
+### CE50 vs AUC/Dose Property Space
 
 ```
                 High AUC/Dose (Good PK)
                          ↑
                          |
-        POOR DRUGS  |  IDEAL DRUGS ✓
-        Low Potency |  High Potency
-    ----------------+----------------→ Low CE50 (High Potency)
-        POOR DRUGS  |  POOR DRUGS
-        Low Potency |  High Potency
-        Poor PK     |  Poor PK
+    High CE50    |    High CE50
+    Good PK      |    Good PK
+  ---------------+---------------→ CE50
+    Low CE50     |    Low CE50
+    Good PK      |    Good PK
                          |
                 Low AUC/Dose (Poor PK)
 ```
 
-**This dataset shows molecules scattered across all quadrants**, confirming independence.
+**This dataset shows molecules scattered across all quadrants**, confirming that CE50 and AUC/Dose are independent in this ML-predicted dataset.
 
 ---
 
@@ -342,7 +342,7 @@ Or use **multi-parameter optimization (MPO):**
 
 1. ✅ **No significant correlation** between predicted CE50 and actual AUC/Dose (r = -0.10, p = 0.38)
 
-2. ✅ **Biologically expected** - Cellular potency and pharmacokinetic exposure are orthogonal properties
+2. ✅ **Biologically expected** - Mass spectrometry fragmentation energy and pharmacokinetic exposure are orthogonal properties
 
 3. ✅ **Confirms independence** - Optimizing one property does NOT optimize the other
 
@@ -366,7 +366,7 @@ Or use **multi-parameter optimization (MPO):**
 2. Use separate predictive models for each
 3. Optimize both properties simultaneously (multi-objective)
 4. Prioritize compounds with good potency AND good PK
-5. Don't assume potent compounds will have favorable PK
+5. Don't assume stable compounds will have favorable PK
 
 ### Final Statement
 

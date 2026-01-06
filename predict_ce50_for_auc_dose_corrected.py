@@ -159,7 +159,7 @@ ax1.set_xscale('log')
 ax1.set_yscale('log')
 ax1.set_xlabel('Predicted CE50 (μM) - Lower = More Potent', fontsize=12, fontweight='bold')
 ax1.set_ylabel('AUC/Dose', fontsize=12, fontweight='bold')
-ax1.set_title('Cellular Potency vs Pharmacokinetic Exposure (Log-Log Scale)',
+ax1.set_title('Mass Spec Fragmentation vs Pharmacokinetic Exposure (Log-Log Scale)',
               fontsize=13, fontweight='bold')
 ax1.grid(True, alpha=0.3)
 plt.colorbar(scatter1, ax=ax1, label='Ensemble Std Dev')
@@ -359,7 +359,7 @@ print(f"{'log(CE50) vs log(AUC/Dose)':<40s} {spearman_r_log:12.4f} {spearman_p_l
 print(f"\n{'='*72}")
 if abs(pearson_r_orig) < 0.3 and pearson_p_orig > 0.05:
     print("CONCLUSION: No significant correlation between CE50 and AUC/Dose")
-    print("Cellular potency and pharmacokinetic exposure are independent properties.")
+    print("Mass spectrometry fragmentation energy and pharmacokinetic exposure are independent properties.")
 elif pearson_p_orig < 0.05:
     print(f"CONCLUSION: Significant correlation found (r={pearson_r_orig:.3f}, p={pearson_p_orig:.4f})")
     if pearson_r_orig > 0:
@@ -369,7 +369,7 @@ elif pearson_p_orig < 0.05:
 print(f"{'='*72}")
 
 # Top compounds by CE50
-print(f"\n{'Top 10 Most Potent Compounds (Lowest CE50):'}")
+print(f"\n{'Top 10 Lowest CE50 Compounds (Easiest Fragmentation) (Lowest CE50):'}")
 print(f"{'Rank':<6s} {'Molecule':<20s} {'CE50 (μM)':>12s} {'AUC/Dose':>12s} {'Confidence':>10s}")
 print("-" * 65)
 top10 = df_final.nsmallest(10, 'predicted_ce50')
@@ -377,7 +377,7 @@ for rank, (idx, row) in enumerate(top10.iterrows(), 1):
     mol_name = df.loc[idx, 'Molecule Name'] if 'Molecule Name' in df.columns else f"Mol_{idx}"
     print(f"{rank:<6d} {mol_name:<20s} {row['predicted_ce50']:12.2f} {row['auc_dose']:12.2f} {row['confidence']:>10s}")
 
-print(f"\n{'Top 10 Least Potent Compounds (Highest CE50):'}")
+print(f"\n{'Top 10 Highest CE50 Compounds (Hardest Fragmentation) (Highest CE50):'}")
 print(f"{'Rank':<6s} {'Molecule':<20s} {'CE50 (μM)':>12s} {'AUC/Dose':>12s} {'Confidence':>10s}")
 print("-" * 65)
 bottom10 = df_final.nlargest(10, 'predicted_ce50')

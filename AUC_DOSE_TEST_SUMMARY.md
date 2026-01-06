@@ -167,10 +167,10 @@ AUC/Dose depends on:
 
 ### Why the Difference?
 
-**CE50** (Cellular Potency):
-- Direct measure of target binding
-- Primarily structure-dependent
-- Predictable from molecular fingerprints
+**CE50** (Mass Spectrometry - Fragmentation Energy):
+- Collision energy for 50% fragmentation in MS/MS
+- Gas-phase molecular stability
+- Predictable from molecular fingerprints (structure-dependent)
 - Production-ready R² achieved
 
 **AUC/Dose** (Pharmacokinetics):

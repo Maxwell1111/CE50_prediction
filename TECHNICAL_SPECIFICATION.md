@@ -1575,11 +1575,11 @@ Check learning curves - if training and validation scores are both low and flat,
 Train separate models for each assay type.
 
 ### Q: How do I interpret pCE50?
-**A:** pCE50 = -log10(CE50)
-- CE50 = 10 μM → pCE50 = -5
-- CE50 = 1 μM → pCE50 = -6
-- Higher pCE50 = more potent compound
-- 1 pCE50 unit = 10-fold difference in potency
+**A:** pCE50 = -log10(CE50_in_eV)
+- CE50 = 10 eV → pCE50 = -1
+- CE50 = 1 eV → pCE50 = 0
+- Higher pCE50 = higher fragmentation energy (more stable molecule in MS)
+- 1 pCE50 unit = 10-fold difference in fragmentation energy
 ```
 
 ---
