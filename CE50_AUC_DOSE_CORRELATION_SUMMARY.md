@@ -7,9 +7,14 @@
 
 ## Research Context
 
-**Original Discovery (2016):** Experimentally measured CE50 (collision energy for 50% fragmentation in mass spectrometry) correlates with rat pharmacokinetic parameters, including IV plasma clearance and oral exposure (AUC).
+**Original Discovery (2016):** Experimentally measured CE50 (collision energy for 50% fragmentation in mass spectrometry) correlates with rat pharmacokinetic parameters.
 
-**Current Hypothesis:** If ML models can accurately predict CE50 from molecular structure, then ML-predicted CE50 should also correlate with rat PK, enabling in silico PK screening without experimental measurements.
+**Key Finding (2016):**
+- **Lower CE50** (easier fragmentation) → **Better PK** (lower IV clearance, higher oral AUC)
+- **Higher CE50** (harder fragmentation) → **Poor PK** (higher IV clearance, lower oral AUC)
+- Statistical significance achieved, enabling PK classification
+
+**Current Hypothesis (2026):** If ML models can accurately predict CE50 from molecular structure, then ML-predicted CE50 should also correlate with rat PK, enabling in silico PK screening without experimental measurements.
 
 **This Analysis:** Tests correlation between **ML-predicted CE50** and **rat oral exposure (AUC/Dose)** measured in vivo.
 
@@ -222,11 +227,23 @@ The **lack of correlation in ML-predicted CE50** is important to understand:
 
 2. **AUC/Dose measures in vivo exposure** - How much drug reaches the bloodstream after oral dosing?
 
-3. **Original 2016 Discovery vs This Analysis:**
-   - **Experimental CE50** (measured by MS/MS) → **DID correlate** with rat PK
-   - **ML-predicted CE50** (from SMILES) → **NO correlation** found in this dataset
-   - Possible reasons: ML prediction errors, narrow predicted range, domain shift
-   - **Conclusion:** Experimental CE50 measurement still required for PK prediction
+3. **Original 2016 Discovery vs This 2026 Analysis:**
+
+   **Original Finding (2016) - Experimental CE50:**
+   - ✅ **Significant correlation** between experimental CE50 and rat PK
+   - ✅ **Lower CE50** → **Better PK** (lower clearance, higher AUC)
+   - ✅ **Higher CE50** → **Poor PK** (higher clearance, lower AUC)
+   - ✅ Enabled classification of favorable vs poor PK compounds
+
+   **Current Test (2026) - ML-Predicted CE50:**
+   - ❌ **No correlation** found between ML-predicted CE50 and rat AUC/Dose (r = -0.10, p = 0.38)
+   - Possible reasons:
+     1. ML prediction errors (R² = 0.57 means 43% unexplained variance)
+     2. Narrow predicted range (16-24 eV, only 1.5-fold) limits correlation detection
+     3. Domain shift (0% high-confidence predictions)
+     4. Small sample size (n=77)
+
+   **Conclusion:** Experimental CE50 measurement still required for reliable PK prediction. ML models need improvement before they can replace experimental measurements for this application.
 
 ### CE50 vs AUC/Dose Property Space
 

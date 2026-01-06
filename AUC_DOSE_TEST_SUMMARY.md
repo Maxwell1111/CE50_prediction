@@ -158,6 +158,19 @@ AUC/Dose depends on:
 
 ---
 
+## Original Discovery: CE50 Predicts Rat PK (2016)
+
+**Important Context:** This analysis tested whether **structure-predicted CE50** correlates with rat PK. However, the original 2016 discovery showed that **experimentally measured CE50** DOES correlate with rat PK:
+
+**Original Finding (2016):**
+- ✅ **Lower CE50** (easier fragmentation) → **Better PK** (lower IV clearance, higher oral AUC)
+- ✅ **Higher CE50** (harder fragmentation) → **Poor PK** (higher IV clearance, lower oral AUC)
+- ✅ Statistical significance enabled classification of favorable vs poor PK compounds
+
+**This Analysis (2026):** Testing whether ML-predicted CE50 maintains that correlation.
+
+---
+
 ## Comparison: CE50 vs AUC/Dose Predictability
 
 | Property | Dataset Size | Best R² | Pearson r | Predictability |

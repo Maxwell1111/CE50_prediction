@@ -21,6 +21,30 @@ The trained CE50 ensemble model (R² = 0.5719 on 300 compounds) was used to pred
 
 ---
 
+## Context: Original 2016 Discovery
+
+**Important Background:** This analysis tests ML-predicted CE50, but the original invention was based on experimentally measured CE50.
+
+**Original Finding (2016):**
+- ✅ **Experimentally measured CE50** showed **significant correlation** with rat pharmacokinetics
+- ✅ **Lower CE50** (easier fragmentation) → **Better PK outcomes**
+  - Lower IV plasma clearance
+  - Higher oral exposure (AUC)
+  - Favorable pharmacokinetic profile
+- ✅ **Higher CE50** (harder fragmentation) → **Poor PK outcomes**
+  - Higher IV plasma clearance
+  - Lower oral exposure (AUC)
+  - Unfavorable pharmacokinetic profile
+- ✅ Statistical significance enabled classification of compounds as favorable vs poor PK
+
+**Current Investigation (2026):**
+- Testing whether ML-predicted CE50 can replace experimental measurements
+- Hypothesis: If ML accurately predicts CE50, it should maintain the PK correlation
+- Result: No correlation found (r = -0.10, p = 0.38) in this dataset
+- Conclusion: Experimental CE50 measurement still required for PK prediction
+
+---
+
 ## Analysis Overview
 
 ### Model Used
@@ -135,9 +159,18 @@ The predicted CE50 values show **very limited range** (16.3 - 24.0 eV), spanning
 | **Scale** | Mass spectrometry (MS/MS) | In vivo pharmacokinetics |
 | **Predictability from fingerprints** | High (R² = 0.57) | Low (R² = 0.10) |
 
-**Example:** A compound can have:
-- **Low CE50 (low CE50)** but **poor PK (low AUC/Dose)** if it's metabolically unstable
-- **High CE50 (high CE50)** but **excellent PK (high AUC/Dose)** if it has favorable ADME properties
+**In this ML-predicted dataset, we observe:**
+- **Low CE50** with both **good PK** and **poor PK** (no consistent pattern)
+- **High CE50** with both **good PK** and **poor PK** (no consistent pattern)
+
+**This contrasts with the original 2016 finding using experimental CE50:**
+- Experimental **Low CE50** → consistently **Better PK** ✓
+- Experimental **High CE50** → consistently **Poor PK** ✓
+
+**Possible reasons for the difference:**
+1. ML prediction errors (R² = 0.57)
+2. Narrow predicted range (1.5-fold) vs experimental range
+3. Domain shift in this dataset
 
 #### 2. **Different Structural Requirements**
 

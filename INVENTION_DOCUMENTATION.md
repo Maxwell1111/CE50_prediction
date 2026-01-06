@@ -155,8 +155,10 @@ This document records the invention and validation of using **CE50 (Collision En
 - **Specificity:** T%
 
 **Mechanistic Hypothesis:**
-- Low CE50 → easily fragments → labile bonds → metabolically unstable → high clearance, poor oral exposure
-- High CE50 → stable in MS → strong bonds → metabolically stable → low clearance, good oral exposure
+- **Low CE50** (easier fragmentation) → **Better PK** (lower clearance, higher oral exposure/AUC)
+- **High CE50** (harder fragmentation) → **Poor PK** (higher clearance, lower oral exposure/AUC)
+
+**Empirical Finding:** Lower CE50 values measured experimentally correlated with favorable pharmacokinetic outcomes in rat studies, including lower plasma clearance and higher oral exposure (AUC). The exact mechanism linking gas-phase fragmentation to in vivo metabolism is under investigation, but the correlation was statistically significant and reproducible.
 
 **Innovation:**
 - First demonstration that MS fragmentation patterns predict in vivo PK

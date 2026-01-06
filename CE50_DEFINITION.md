@@ -100,9 +100,40 @@ This repository achieved **R² = 0.57** on 300 compounds, confirming CE50 is str
 
 This is **expected** - they measure completely different properties!
 
+## Discovery: CE50 as Predictor of Rat Pharmacokinetics (2016)
+
+### Original Finding
+
+**Experimentally measured CE50 correlates with rat pharmacokinetic outcomes:**
+
+**Correlation Discovered:**
+- **Lower CE50** (easier fragmentation in MS) → **Better pharmacokinetics**
+  - Lower IV plasma clearance
+  - Higher oral exposure (AUC)
+  - Favorable PK profile
+
+- **Higher CE50** (harder fragmentation in MS) → **Poor pharmacokinetics**
+  - Higher IV plasma clearance
+  - Lower oral exposure (AUC)
+  - Unfavorable PK profile
+
+**Statistical Significance:** The correlation was statistically significant and enabled classification of compounds as having favorable vs poor PK parameters before conducting full in vivo studies.
+
+**Innovation:** This was the first demonstration that mass spectrometry fragmentation patterns could predict in vivo pharmacokinetic behavior, providing a fast, high-throughput tool orthogonal to traditional ADME assays.
+
+**Mechanism:** The exact mechanistic link between gas-phase fragmentation (CE50) and in vivo metabolism/clearance is still under investigation. The correlation is empirical but reproducible.
+
+---
+
 ## Applications of CE50 Prediction
 
-### 1. **Mass Spectrometry Method Development**
+### 1. **Pharmacokinetic Screening** (Based on 2016 Discovery)
+- Predict rat PK outcomes from CE50 measurements
+- Classify compounds as favorable vs poor PK
+- Prioritize compounds for in vivo studies
+- Reduce animal testing through pre-screening
+
+### 2. **Mass Spectrometry Method Development**
 - Optimize MS/MS fragmentation conditions
 - Predict optimal collision energies for new compounds
 - Design Multiple Reaction Monitoring (MRM) methods

@@ -32,8 +32,10 @@ This repository contains a complete, production-ready implementation of a chemin
 
 **2016: Original Discovery**
 - Experimentally measured CE50 correlates with rat pharmacokinetic parameters
-- CE50 predicts IV plasma clearance and oral exposure (AUC)
-- Classification of compounds as favorable vs poor PK based on CE50 cutoffs
+- **Key Finding:**
+  - **Lower CE50** (easier fragmentation) → **Better PK** (lower clearance, higher oral AUC)
+  - **Higher CE50** (harder fragmentation) → **Poor PK** (higher clearance, lower oral AUC)
+- CE50 enables classification of compounds as favorable vs poor PK based on cutoffs
 - Methodology documented in CE50.pdf
 
 **2026: Machine Learning Extension**
