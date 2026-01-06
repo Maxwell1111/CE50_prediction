@@ -41,11 +41,13 @@ This repository contains a complete, production-ready implementation of a chemin
 **2026: Machine Learning Extension**
 - ML ensemble achieves R² = 0.57 for CE50 prediction from SMILES
 - Tested correlation between ML-predicted CE50 and rat oral exposure (77 compounds)
-- Result: No significant correlation (r = -0.10, p = 0.38) in this dataset
-- Conclusion: Experimental CE50 measurement still recommended for PK prediction
+- **Correlation Analysis:** No significant correlation (r = -0.10, p = 0.38)
+- **ROC-AUC Analysis:** ROC-AUC = 0.48 (worse than random, cannot classify PK outcomes)
+- **Conclusion:** Experimental CE50 measurement still required for reliable PK prediction
 - Driven by advancements in ML and new AI tools
 
 **See `INVENTION_DOCUMENTATION.md` for complete patent/IP documentation**
+**See `ROC_AUC_ANALYSIS_REPORT.md` for detailed classification performance analysis**
 
 ## 📁 Repository Contents
 
@@ -58,6 +60,7 @@ This repository contains a complete, production-ready implementation of a chemin
 - **`TECHNICAL_SPECIFICATION.md`** - Complete 67-page technical specification
 - **`ENSEMBLE_IMPLEMENTATION_SUMMARY.md`** - Implementation summary with results
 - **`INVENTION_DOCUMENTATION.md`** - **NEW** Patent/IP documentation of CE50-PK correlation discovery (2016) and ML extension (2026)
+- **`ROC_AUC_ANALYSIS_REPORT.md`** - **NEW** ROC-AUC analysis showing ML-predicted CE50 cannot classify PK outcomes
 - **`CE50_DEFINITION.md`** - Comprehensive explanation of CE50 as mass spectrometry property
 - **`CE50_AUC_DOSE_CORRELATION_SUMMARY.md`** - Analysis of ML-predicted CE50 vs rat oral exposure
 - **`AUC_DOSE_TEST_SUMMARY.md`** - Full AUC/Dose prediction results
